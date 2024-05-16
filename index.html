@@ -10,6 +10,10 @@
 <body>
     <header>
         <h1>Student Database</h1>
+        <div class="searchContainer">
+            <input type="text" id="searchbar" onkeyup="search()">
+            <img src="./search.png" class="img-fluid" alt="search" width="20px" height="20px">
+        </div>
     </header>
     <main>
         <div class="container">
@@ -17,7 +21,17 @@
                 <form id="form">
                     <input type="text" name="id" id="uid" placeholder="Enter student Id">
                     <input type="text" name="name" id="uname" placeholder="Enter Student Name">
-                    <input type="text" name="branch" id="branch" placeholder="Enter Student Branch">
+                    <select name="branch" id="branch">
+                        <option value="ECE">CSE</option>
+                        <optgroup label="CSE Specializations">
+                            <option value="CSE-DS">CSE-DS</option>
+                            <option value="CSE-CS">CSE-CS</option>
+                            <option value="CSE-CS">CSE-AIML</option>
+                          </optgroup>
+                        <option value="ECE">ECE</option>
+                        <option value="IT">IT</option>
+                        <option value="EEE" >EEE</option>
+                      </select>
                     <input type="text" name="phno" id="phno" placeholder="Enter Student Mobile Number">
                     <input type="email" name="email" id="email" placeholder="Enter Student Email">
                     <button type="submit" onclick="addUsers()">Add</button>
@@ -30,7 +44,9 @@
                             
                         </thead>
                         <tbody id="tbody">
-                
+                            <div id="containerNothing"class="nothingContainer" style="display: none;">
+                                <p>Nothing there to show</p>
+                            </div>
                         </tbody>
                     </table>
             </div>

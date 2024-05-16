@@ -2,10 +2,45 @@
   "users": [
     {
       "id": "1",
-      "name": "adnan",
-      "branch": "cse- AIML",
+      "name": "nowfeil",
+      "branch": "CSE",
       "phno": "78945605",
-      "email": "salmanthuraab@gmail.com"
+      "email": "21b81a0524@cvr.ac.in"
+    },
+    {
+      "id": "2",
+      "name": "Nowfeil Adnan",
+      "branch": "cse- AIML",
+      "phno": "1234567890",
+      "email": "abc@gmail.com"
+    },
+    {
+      "id": "3",
+      "name": "Priyansh",
+      "branch": "EEE",
+      "phno": "456123789213",
+      "email": "CDE@GMAIL.COM"
+    },
+    {
+      "id": "4",
+      "name": "Shiva",
+      "branch": "CE",
+      "phno": "123789546",
+      "email": "hjgksa@gmail.com"
+    },
+    {
+      "id": "5",
+      "name": "Athif",
+      "branch": "IT",
+      "phno": "1597536842",
+      "email": "cdn@yahoo.com"
+    },
+    {
+      "id": "6",
+      "name": "Rama",
+      "branch": "CSE-CS",
+      "phno": "357896142",
+      "email": "abc@gmail.com"
     }
   ]
 }

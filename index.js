@@ -1,4 +1,6 @@
 let url ="http://localhost:3000/users";
+
+
 function addUsers(){
     let id = document.getElementById("uid").value;
     let name = document.getElementById("uname").value;
@@ -68,7 +70,6 @@ function deleteUser(id){
 
 function editUser(id) {
     document.getElementById("editForm").style.display = "block";
-    
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -102,4 +103,29 @@ function updateUser(id) {
         console.log('Updated user:', data);
     })
     .catch(error => console.error('Error updating user:', error));
+}
+
+function search(){
+    text = document.getElementById("searchbar").value;
+    console.log(text);
+    const searchtable = document.getElementById('tbody');
+    searchtable.innerHTML = ''
+    fetch(url).then((response)=>response.json()).then((data)=>{
+        const searchData = data.filter((u)=>{
+            return (u.id.includes(text)||u.name.includes(text)||u.branch.includes(text)||u.phno.includes(text)||u.email.includes(text))
+        })
+        let ntng = document.getElementById('containerNothing');
+        if(searchData.length==0){
+            ntng.style.display = "block";
+        }else{
+            ntng.style.display = "none";
+            const searchHead = document.getElementById('thead')
+            searchHead.innerHTML = `<th>Id</th><th>Name</th><th>Branch</th><th>Mobile Number</th><th>Email</th><th>Operations</th>`
+            searchData.forEach((user)=>{
+                let row = document.createElement("tr");
+                row.innerHTML +=`<td>${user.id}</td><td>${user.name}</td><td>${user.branch}</td><td>${user.phno}</td><td>${user.email}</td><td><button onclick="deleteUser(${user.id})">Delete</button>&nbsp;<button onclick="editUser(${user.id})">Edit</button></td>`
+                searchtable.appendChild(row);
+            })
+        }
+    })
 }

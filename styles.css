@@ -8,7 +8,7 @@ form{
     gap: 1rem;
 }
 
-input:hover{
+input:hover,select:hover{
     background-color: azure;
 }
 main{
@@ -18,7 +18,7 @@ main{
     width: fit-content;
 }
 
-input,button{
+input,button,select{
     border: 0;
 }
 
@@ -40,13 +40,13 @@ main{
 }
 
 
-input{
+input,select{
     border: 1px solid rgb(203, 230, 230);
     padding: 10px;
     border-radius: 10px;
 }
 
-button {
+select,button {
     padding: 10px;
     width: 100px;
 }
@@ -56,10 +56,21 @@ table{
     text-align: center;
 }
 
-input:focus{
+select,input:focus{
     transform: scale(1.09);
 }
 
-button:focus{
+select,button:focus{
     transform: scale(1.09);
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.searchContainer img{
+    margin-left: -15%;
 }
